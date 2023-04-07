@@ -3,7 +3,7 @@
 DO_CSS=true
 DO_JS=true
 
-BASE="/github/workspace"
+BASE="/github/workspace/"
 
 prepend_files_with_path() {
 
