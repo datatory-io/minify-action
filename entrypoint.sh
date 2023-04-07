@@ -43,6 +43,7 @@ fi
 
 if [ "$DO_CSS" != false ]; then
 
+	echo "INPUT_OUTPUT_CSS: $INPUT_OUTPUT_CSS"
 	if [ -z "$INPUT_OUTPUT_CSS" ] || [ ! -d "$INPUT_OUTPUT_CSS" ]; then
 		echo "output directory is not given or does not exist"
 		exit 1
@@ -60,6 +61,7 @@ fi
 
 if [ "$DO_JS" != false ]; then
 
+	echo "INPUT_OUTPUT_JS: $INPUT_OUTPUT_JS"
 	if [ -z "$INPUT_OUTPUT_JS" ] || [ ! -d "$INPUT_OUTPUT_JS" ]; then
 		echo "output dis is not given or does not exist"
 		exit 1
