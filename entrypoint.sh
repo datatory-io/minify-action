@@ -30,12 +30,12 @@ do_minify() {
 
 echo "INPUT_CSS_DIR: $INPUT_CSS_DIR"
 if [ -z "$INPUT_CSS_DIR" ] || [ ! -d "$INPUT_CSS_DIR" ]; then
-	DO_CSS = false
+	DO_CSS=false
 fi
 
 echo "INPUT_JS_DIR: $INPUT_JS_DIR"
 if [ -z "$INPUT_JS_DIR" ] || [ ! -d "$INPUT_JS_DIR" ]; then
-	DO_JS = false
+	DO_JS=false
 fi
 
 if [ "$DO_CSS" = false ] && [ "$DO_JS" = false ]; then
