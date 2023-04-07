@@ -5,17 +5,13 @@ DO_JS=true
 
 prepend_files_with_path() {
 
-	FILES=()
+	FILES=($1)
 
-	while read -r element; do
-		FILES+=("$element")
-	done <<< "$1"
-
-	RESULT=$2
+	RESULT=""
 
 	for ITEM in "${FILES[@]}"
 	do
-		RESULT="$RESULT/$ITEM "
+		RESULT="$RESULT$2/$ITEM "
 	done
 
 	echo "$RESULT"
