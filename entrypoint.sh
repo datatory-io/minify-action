@@ -3,9 +3,6 @@
 DO_CSS=true
 DO_JS=true
 
-pwd
-ls -la
-
 prepend_files_with_path() {
 
 	readarray -t FILES <<< "$1"
