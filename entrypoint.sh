@@ -5,9 +5,11 @@ DO_JS=true
 
 prepend_files_with_path() {
 
+	local ITEMS=("$@")
+	local CSS_DIR=$1
 	RESULT=$2
 
-	for ITEM in "${$1[@]}"
+	for ITEM in "${ITEMS[@]}"
 	do
 		RESULT="$RESULT$ITEM "
 	done
@@ -21,8 +23,7 @@ bundle_by_dir() {
 }
 
 bundle_by_files() {
-	FILESLIST=$(prepend_files_with_path $1 $2)
-	minify -b -o "$3/bundle.$4" "$FILESLIST"
+	minify -b -o "$2" "$1"
 }
 
 do_minify() {
@@ -53,28 +54,10 @@ if [ "$DO_CSS" != false ]; then
 		bundle_by_dir "$INPUT_CSS_DIR" "$INPUT_OUTPUT_CSS" "css"
 	else
 		readarray -t FILES <<< "$INPUT_CSS_FILES"
-		echo "${FILES[@]}"
-		bundle_by_files "$FILES" "$INPUT_CSS_DIR" "$INPUT_OUTPUT_CSS" "css"
+		FILESLIST=prepend_files_with_path "${FILES[@]}" "$INPUT_CSS_DIR"
+		bundle_by_files "$FILESLIST" "$INPUT_OUTPUT_CSS/bundle.css"
 	fi
 
 	do_minify "$INPUT_CSS_DIR/bundle.css" "$INPUT_OUTPUT_CSS/style.min.css"
-fi 
-
-if [ "$DO_JS" != false ]; then
-
-	if [ -z "$INPUT_OUTPUT_JS" ] || [ ! -d "$INPUT_OUTPUT_JS" ]; then
-		echo "output dis is not given or does not exist"
-		exit 1
-	fi
-
-	if [ "$INPUT_JS_FILES" = "*" ]; then
-		bundle_by_dir "$INPUT_JS_DIR" "$INPUT_OUTPUT_JS" "js"
-	else
-		readarray -t FILES <<< "$INPUT_JS_FILES"
-		echo "${FILES[@]}"
-		bundle_by_files "$FILES" "$INPUT_JS_DIR" "$INPUT_OUTPUT_JS" "js"
-	fi
-
-	do_minify "$INPUT_JS_DIR/bundle.js" "$INPUT_OUTPUT_JS/script.min.js"
 fi 
 
