@@ -5,11 +5,11 @@ DO_JS=true
 
 prepend_files_with_path() {
 
-	local ITEMS=("$@")
-	local CSS_DIR=$1
+	readarray -t FILES <<< "$1"
+
 	RESULT=$2
 
-	for ITEM in "${ITEMS[@]}"
+	for ITEM in "${FILES[@]}"
 	do
 		RESULT="$RESULT$ITEM "
 	done
@@ -53,8 +53,8 @@ if [ "$DO_CSS" != false ]; then
 	if [ "$INPUT_CSS_FILES" = "*" ]; then
 		bundle_by_dir "$INPUT_CSS_DIR" "$INPUT_OUTPUT_CSS" "css"
 	else
-		readarray -t FILES <<< "$INPUT_CSS_FILES"
-		FILESLIST=prepend_files_with_path "${FILES[@]}" "$INPUT_CSS_DIR"
+		
+		FILESLIST=prepend_files_with_path "$INPUT_CSS_FILES" "$INPUT_CSS_DIR"
 		bundle_by_files "$FILESLIST" "$INPUT_OUTPUT_CSS/bundle.css"
 	fi
 
