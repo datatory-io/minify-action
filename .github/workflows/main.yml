@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Minify the beast
-        uses: datatory-io/minify-action@v1
+        uses: datatory-io/minify-action@main
         with:
           css-dir: ./
           css-files: "*"
