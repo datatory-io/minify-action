@@ -3,6 +3,9 @@
 DO_CSS=true
 DO_JS=true
 
+echo "$INPUT_CSS_DIR"
+echo "$INPUT_OUTPUT_CSS"
+
 prepend_files_with_path() {
 
 	RESULT=$2
@@ -44,7 +47,7 @@ fi
 if [ "$DO_CSS" != false ]; then
 
 	if [ -z "$INPUT_OUTPUT_CSS" ] || [ ! -d "$INPUT_OUTPUT_CSS" ]; then
-		echo "output dis is not given or does not exist"
+		echo "output directory is not given or does not exist"
 		exit 1
 	fi
 
