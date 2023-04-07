@@ -1,0 +1,38 @@
+name: 'Minify Action'
+description: 'Minify css and js deployment.'
+author: "datatory.io / Taco de Wolff"
+
+inputs:
+  css-dir:
+    description: "the dir containing all css files"
+    required: false
+  css-files:
+    description: "files seperated by space to process (* for all)"
+    required: false
+  should-combine-css:
+    description: "wether the css files should be combined to one"
+    required: false
+  output-css: 
+    description: "output file or dir for the css files"
+    required: false
+  js-dir:
+    description: "the dir containing all js files"
+    required: false
+  js-file:
+    description: "files seperated by space to process (* for all)"
+    required: false
+  should-combine-js: 
+    description: "wether the js files should be combined to one"
+    required: false
+  output-js:
+    description: "output file or dir for the css files"
+    required: false
+  
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: "box"
+  color: "blue"
