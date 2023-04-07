@@ -16,6 +16,7 @@ prepend_files_with_path() {
 }
 
 bundle_by_dir() {
+	ls -1 "$1"
 	minify -r -b -o "$2/bundle.$3" "$1"
 }
 
@@ -28,12 +29,10 @@ do_minify() {
 	minify -o "$2" "$1"
 }
 
-echo "INPUT_CSS_DIR: $INPUT_CSS_DIR"
 if [ -z "$INPUT_CSS_DIR" ] || [ ! -d "$INPUT_CSS_DIR" ]; then
 	DO_CSS=false
 fi
 
-echo "INPUT_JS_DIR: $INPUT_JS_DIR"
 if [ -z "$INPUT_JS_DIR" ] || [ ! -d "$INPUT_JS_DIR" ]; then
 	DO_JS=false
 fi
@@ -45,7 +44,6 @@ fi
 
 if [ "$DO_CSS" != false ]; then
 
-	echo "INPUT_OUTPUT_CSS: $INPUT_OUTPUT_CSS"
 	if [ -z "$INPUT_OUTPUT_CSS" ] || [ ! -d "$INPUT_OUTPUT_CSS" ]; then
 		echo "output directory is not given or does not exist"
 		exit 1
@@ -63,7 +61,6 @@ fi
 
 if [ "$DO_JS" != false ]; then
 
-	echo "INPUT_OUTPUT_JS: $INPUT_OUTPUT_JS"
 	if [ -z "$INPUT_OUTPUT_JS" ] || [ ! -d "$INPUT_OUTPUT_JS" ]; then
 		echo "output dis is not given or does not exist"
 		exit 1
