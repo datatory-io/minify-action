@@ -5,7 +5,11 @@ DO_JS=true
 
 prepend_files_with_path() {
 
-	readarray -t FILES <<< "$1"
+	FILES=()
+
+	while read -r element; do
+		FILES+=("$element")
+	done <<< "$1"
 
 	RESULT=$2
 
