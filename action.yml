@@ -3,22 +3,22 @@ description: 'Combine and Minify css and js deployment.'
 author: "datatory.io / Taco de Wolff"
 
 inputs:
-  css-dir:
+  css_dir:
     description: "the dir containing all css files"
     required: false
-  css-files:
+  css_files:
     description: "files seperated by space to process (* for all)"
     required: false
-  output-css: 
+  output_css: 
     description: "output file or dir for the css files"
     required: false
-  js-dir:
+  js_dir:
     description: "the dir containing all js files"
     required: false
-  js-files:
+  js_files:
     description: "files seperated by space to process (* for all)"
     required: false
-  output-js:
+  output_js:
     description: "output file or dir for the css files"
     required: false
   
