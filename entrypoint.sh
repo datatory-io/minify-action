@@ -3,12 +3,6 @@
 DO_CSS=true
 DO_JS=true
 
-INPUT_CSS_DIR=${'INPUT_CSS-DIR'}
-INPUT_CSS_FILES=${"INPUT_CSS-FILES"}
-INPUT_OUTPUT_CSS=${"INPUT_OUTPUT-CSS"}
-
-declare -p
-
 prepend_files_with_path() {
 
 	RESULT=$2

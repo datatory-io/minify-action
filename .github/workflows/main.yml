@@ -11,6 +11,6 @@ jobs:
       - name: Minify the beast
         uses: datatory-io/minify-action@main
         with:
-          css-dir: ./
-          css-files: "*"
-          output-css: ./
+          css_dir: ./
+          css_files: "*"
+          output_css: ./
