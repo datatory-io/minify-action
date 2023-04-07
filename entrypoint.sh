@@ -3,8 +3,7 @@
 DO_CSS=true
 DO_JS=true
 
-echo "$INPUT_CSS-DIR"
-echo "$INPUT_OUTPUT-CSS"
+declare -p
 
 prepend_files_with_path() {
 
