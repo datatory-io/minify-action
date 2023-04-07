@@ -53,6 +53,7 @@ if [ "$DO_CSS" != false ]; then
 		bundle_by_dir "$INPUT_CSS_DIR" "$INPUT_OUTPUT_CSS" "css"
 	else
 		readarray -t FILES <<< "$INPUT_CSS_FILES"
+		echo "${FILES[@]}"
 		bundle_by_files "$FILES" "$INPUT_CSS_DIR" "$INPUT_OUTPUT_CSS" "css"
 	fi
 
