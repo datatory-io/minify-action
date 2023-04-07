@@ -3,7 +3,8 @@
 DO_CSS=true
 DO_JS=true
 
-BASE="/"
+pwd
+ls -la
 
 prepend_files_with_path() {
 
