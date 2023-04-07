@@ -11,7 +11,7 @@ prepend_files_with_path() {
 
 	for ITEM in "${FILES[@]}"
 	do
-		RESULT="$RESULT$ITEM "
+		RESULT="$RESULT/$ITEM "
 	done
 
 	echo "$RESULT"
@@ -19,15 +19,15 @@ prepend_files_with_path() {
 
 bundle_by_dir() {
 	ls -1 "$1"
-	minify -r -b -o "$BASE$2/bundle.$3" "$1"
+	minify -r -b -o "$2/bundle.$3" "$1"
 }
 
 bundle_by_files() {
-	minify -b -o "$BASE$2" "$BASE$1"
+	minify -b -o "$2" "$1"
 }
 
 do_minify() {
-	minify -o "$BASE$2" "$BASE$1"
+	minify -o "$2" "$1"
 }
 
 if [ -z "$INPUT_CSS_DIR" ] || [ ! -d "$INPUT_CSS_DIR" ]; then
