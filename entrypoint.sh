@@ -4,6 +4,7 @@ DO_CSS=true
 DO_JS=true
 
 declare -p
+env
 
 prepend_files_with_path() {
 
