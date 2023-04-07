@@ -12,5 +12,5 @@ jobs:
         uses: datatory-io/minify-action@main
         with:
           css_dir: ./
-          css_files: "*"
+          css_files: "bootstrap.css"
           output_css: ./
