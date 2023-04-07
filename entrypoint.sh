@@ -70,6 +70,7 @@ if [ "$DO_JS" != false ]; then
 		bundle_by_dir "$INPUT_JS_DIR" "$INPUT_OUTPUT_JS" "js"
 	else
 		readarray -t FILES <<< "$INPUT_JS_FILES"
+		echo "${FILES[@]}"
 		bundle_by_files "$FILES" "$INPUT_JS_DIR" "$INPUT_OUTPUT_JS" "js"
 	fi
 
