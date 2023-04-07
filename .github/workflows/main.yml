@@ -1,0 +1,14 @@
+name: "Test Minify"
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  do-the-minify-stuff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Minify the beast
+        uses: datatory-io/minify-action@master
+        with:
+          css-dir: ./

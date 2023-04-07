@@ -1,4 +1,4 @@
-name: 'C&M Combine & Minify CSS/JS Action'
+name: 'minify-action'
 description: 'Combine and Minify css and js deployment.'
 author: "datatory.io / Taco de Wolff"
 
