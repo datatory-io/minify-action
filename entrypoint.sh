@@ -13,7 +13,7 @@ prepend_files_with_path() {
 
 	for ITEM in "${FILES[@]}"
 	do
-		RESULT="$RESULT$BASE/$2/$ITEM "
+		RESULT="$RESULT$2/$ITEM "
 	done
 
 	echo "$RESULT"
@@ -26,7 +26,7 @@ bundle_by_dir() {
 
 bundle_by_files() {
 	local FOO=$1
-	minify -b -o "$BASE/$2" "${FOO[@]}"
+	minify -b -o "$2" "${FOO[@]}"
 }
 
 do_minify() {
