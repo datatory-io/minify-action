@@ -25,7 +25,8 @@ bundle_by_dir() {
 }
 
 bundle_by_files() {
-	minify -b -o "$BASE/$2" "$BASE/$1"
+	local FOO=$1
+	minify -b -o "$BASE/$2" "$FOO[@]"
 }
 
 do_minify() {
