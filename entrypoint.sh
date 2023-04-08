@@ -3,8 +3,7 @@
 DO_CSS=true
 DO_JS=true
 
-pwd
-ls -la
+BASE=$(pwd)
 
 prepend_files_with_path() {
 
@@ -14,7 +13,7 @@ prepend_files_with_path() {
 
 	for ITEM in "${FILES[@]}"
 	do
-		RESULT="$RESULT$2/$ITEM "
+		RESULT="$RESULT$BASE/$2/$ITEM "
 	done
 
 	echo "$RESULT"
@@ -26,7 +25,7 @@ bundle_by_dir() {
 }
 
 bundle_by_files() {
-	minify -b -o "$2" "$1"
+	minify -b -o "$BASE/$2" "$BASE/$1"
 }
 
 do_minify() {
